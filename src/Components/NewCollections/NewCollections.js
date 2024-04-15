@@ -6,7 +6,7 @@ import Item from '../Item/Item'
 const NewCollections = () => {
   const [new_collection, setNewCollection] = useState([])
   useEffect(() => {
-    fetch('http://localhost:4000/newcollections').then(res => res.json()).then(e => setNewCollection(e.reverse()))
+    fetch('https://dkshop-ecommerceapi.onrender.com/newcollections').then(res => res.json()).then(e => setNewCollection(e.reverse()))
   },[])
   return (
     <div className='new-collections'>

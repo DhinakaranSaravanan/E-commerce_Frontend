@@ -13,7 +13,7 @@ const LoginSignup = () => {
     setFormData({...formData,[e.target.name]:e.target.value})
   }
   const signup = async () => {    
-    let res = await fetch('http://localhost:4000/signup',{
+    let res = await fetch('https://dkshop-ecommerceapi.onrender.com/signup',{
       method:'POST',
       headers:{
         Accept:'application/json',
@@ -30,7 +30,7 @@ const LoginSignup = () => {
     }
   }
   const login = async () => {
-    let res = await fetch('http://localhost:4000/login',{
+    let res = await fetch('https://dkshop-ecommerceapi.onrender.com/login',{
       method:'POST',
       headers:{
         Accept:'application/json',

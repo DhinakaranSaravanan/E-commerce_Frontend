@@ -16,12 +16,12 @@ const ShopContextProvider = (props) => {
    const[cartItems, setCartItems]=useState(getDefaultCart())
 
    useEffect(() => {
-      fetch('http://localhost:4000/allproduct')
+      fetch('https://dkshop-ecommerceapi.onrender.com/allproduct')
       .then(res => res.json())
       .then(e => setAllProduct(e))   
       
       if(localStorage.getItem('auth-token')){
-         fetch('http://localhost:4000/getcartdata',{
+         fetch('https://dkshop-ecommerceapi.onrender.com/getcartdata',{
             method:'POST',
             headers:{
                Accept:'application/form-data',
@@ -55,7 +55,7 @@ const ShopContextProvider = (props) => {
    const addCart = (e) => {
       setCartItems(pre => ({...pre,[e]:pre[e]+1}))
       if(localStorage.getItem('auth-token')){
-         fetch('http://localhost:4000/addtocart',{
+         fetch('https://dkshop-ecommerceapi.onrender.com/addtocart',{
             method:'POST',
             headers:{
                Accept:'application/form-data',
@@ -69,7 +69,7 @@ const ShopContextProvider = (props) => {
    const removeCart = (e) => {
       setCartItems(pre => ({...pre,[e]:pre[e]-1}))
       if(localStorage.getItem('auth-token')){
-         fetch('http://localhost:4000/removefromcart',{
+         fetch('https://dkshop-ecommerceapi.onrender.com/removefromcart',{
             method:'POST',
             headers:{
                Accept:'application/form-data',

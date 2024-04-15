@@ -6,7 +6,7 @@ import Item from '../Item/Item'
 const Popular = () => {
   const [data_product, setDataProduct] = useState([])
   useEffect(() => {
-    fetch('http://localhost:4000/popularinwomen').then(res => res.json()).then(e => setDataProduct(e))
+    fetch('https://dkshop-ecommerceapi.onrender.com/popularinwomen').then(res => res.json()).then(e => setDataProduct(e))
   },[])
   return (
     <div className='popular'>
